@@ -1,0 +1,128 @@
+//WAP to calculate the income tax
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    double sal,tax,pay;
+		Scanner scan= new Scanner(System.in);
+		
+		int choice;
+		String IncomeType;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Type of Income Source:");
+		System.out.println("1.Agriculture\n");
+		System.out.println("2.Salary\n");
+		System.out.println("3.Croptocurrency\n");
+		
+		System.out.println("Choice your Income Source:");
+		
+		
+		
+		choice=sc.nextInt();
+		System.out.println("Enter Your Income:");
+		sal=sc.nextDouble();
+		
+		//logic
+		
+		switch(choice)
+		{
+		    case 1: 
+		        IncomeType="Agriculture";
+		        if(sal>=0)
+		        { 
+		            tax= (0*sal)/100;
+		            System.out.println("Total Tax to be paid is "+tax);
+		        }
+		        else
+		        {
+		            System.out.println("Wrong Input");
+		        }
+		        System.out.println("Agricultural income is exempted from taxation and \nnot included under total income is mentioned under Section 10 (1) of the Income Tax Act of India.");
+		        break;
+		        
+		    case 2: 
+		        IncomeType="Salary";
+		        if (sal>=0 && sal<=250000)
+		        {
+		            System.out.println("No tax to be paid");
+		        }
+		        else if(sal>=250001 && sal<=500000)
+		        {
+		            tax= (5*sal)/100;
+		            pay=sal-tax;
+		            System.out.println("Total Annual Income is: Rs." +sal);
+		            System.out.println("Total Tax to be paid is(%5) "+tax);
+		            System.out.println("Total Take Home Pay is "+pay);
+		        }
+		        else if(sal>=500001 && sal<=750000)
+		        {
+		            tax= (10*sal)/100;
+		            pay=sal-tax;
+		            System.out.println("Total Annual Income is: Rs." +sal);
+		            System.out.println("Total Tax to be paid is (%10)"+tax);
+		            System.out.println("Total Take Home Pay is "+pay);
+		        }
+		        else if(sal>=750001 && sal<=1000000)
+		        {
+		            tax= (15*sal)/100;
+		            pay=sal-tax;
+		            System.out.println("Total Annual Income is: Rs." +sal);
+		            System.out.println("Total Tax to be paid is(%15) "+tax);
+		            System.out.println("Total Take Home Pay is "+pay);
+		        }
+		        else if(sal>=1000001 && sal<=1250000)
+		        {
+		            tax= (20*sal)/100;
+		            pay=sal-tax;
+		            System.out.println("Total Annual Income is: Rs." +sal);
+		            System.out.println("Total Tax to be paid is(%20) "+tax);
+		            System.out.println("Total Take Home Pay is "+pay);
+		        }
+		        else if(sal>=1250001 && sal<=1500000)
+		        {
+		            tax= (25*sal)/100;
+		            pay=sal-tax;
+		            System.out.println("Total Annual Income is: Rs." +sal);
+		            System.out.println("Total Tax to be paid is(%25) "+tax);
+		            System.out.println("Total Take Home Pay is "+pay);
+		        }
+		        else if(sal>=1500001)
+		        { 
+		            tax= (30*sal)/100;
+		            pay=sal-tax;
+		            System.out.println("Total Annual Income is: Rs." +sal);
+		            System.out.println("Total Tax to be paid is (%30)"+tax);
+		            System.out.println("Total Take Home Pay is "+pay);
+		        }
+		        else
+		        {
+		            System.out.println("Wrong Input");
+		        }
+		        break;
+		        
+		    case 3: 
+		        IncomeType="Croptocurrency";
+		        if(sal>=0)
+		        { 
+		            tax= (30*sal)/100;
+		            pay=sal-tax;
+		            System.out.println("Total Annual Income is: Rs." +sal);
+		            System.out.println("Total Tax to be paid is "+tax);
+		            System.out.println("Total Take Home Pay is "+pay);
+		            System.out.println("\n\nNote: As per Budget 2022 Cryptocurrencies and non-fungible tokens- will attract a 30% tax");
+		        }
+		        else
+		        {
+		            System.out.println("Wrong Input");
+		        }
+		        
+		        break;
+		        
+		        default:
+		            IncomeType="Not a vaild Income Source";
+		 
+		}
+	}
+}
